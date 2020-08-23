@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WpfApp1.UserControl_1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="White" >
+    <StackPanel HorizontalAlignment="Center">
+        <Label HorizontalContentAlignment="Center">Rejestracja</Label>
+        <Label Content="Login:"/>
+        <TextBox Height="25" Width="200" x:Name="us1_Name" Text="{Binding model.login}"/>
+        <Label Content="Hasło:"/>
+        <TextBox Height="25" Width="200" x:Name="us1_Passw" Text="{Binding model.password}"/>
+        <Label Content="Potwierdź hasło:"/>
+        <TextBox Height="25" Width="200" x:Name="us1_RPassw" Text="{Binding model.r_password}"/>
+        <CheckBox Height="25" Width="200" x:Name="us1_Terms" Content="Akceptuję reguły poprawności" IsChecked="{Binding model.accept}"/>
+        <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
+    </StackPanel>
+    </Grid>
+</UserControl>
