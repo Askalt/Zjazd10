@@ -20,17 +20,16 @@ namespace WpfApp1
     public partial class UserControl_1 : UserControl
     {
         public event EventHandler<Register_eventargs> RegisterAttempt;
-        public UserControl_model control_model { get; set; }
+        public UserControl_model control_m { get; set; }
         public UserControl_1()
         {
-            control_model = new UserControl_model();
-            DataContext = control_model;
+            control_m = new UserControl_model();
+            DataContext = control_m;
             InitializeComponent();
-
         }
         private void RegisterAction(object sender, RoutedEventArgs e)
         {
-            RegisterAttempt?.Invoke(this, new Register_eventargs(control_model.model.login, control_model.model.password, control_model.model.r_password, control_model.model.accept));
+            RegisterAttempt?.Invoke(this, new Register_eventargs(control_m.model.login, control_m.model.password, control_m.model.r_password, control_m.model.accept));
             tb_Name.Clear();
             tb_Passw.Clear();
             tb_RPassw.Clear();

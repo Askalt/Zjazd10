@@ -11,8 +11,6 @@ namespace WpfApp1
     public class Register_command : ICommand
     {
         public Registration_model_validation valid;
-
-        [Obsolete]
         public bool CanExecute(object parameter)
         {
             if (parameter != null)

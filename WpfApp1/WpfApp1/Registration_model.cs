@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-   
-        public class Registration_model : INotifyPropertyChanged
+    public class Registration_model : INotifyPropertyChanged
         {
             public bool accept { get; set; }
             private string _login;
             private string _password;
             private string _rpassword;
-            public Registration_model()
-            {
-            }
-            public Registration_model(string login, string password, string r_password, bool accept)
+        public Registration_model()
+        {
+        }
+        public Registration_model(string login, string password, string r_password, bool accept)
             {
                 this.login = login;
                 this.password = password;
@@ -33,7 +33,6 @@ namespace WpfApp1
                     {
                         _login = value;
                         OnPropertyChanged("login");
-
                     }
                 }
             }
@@ -46,7 +45,6 @@ namespace WpfApp1
                     {
                         _password = value;
                         OnPropertyChanged("password");
-
                     }
                 }
             }
@@ -59,21 +57,16 @@ namespace WpfApp1
                     {
                         _rpassword = value;
                         OnPropertyChanged("r_password");
-
                     }
                 }
             }
-
             public event PropertyChangedEventHandler PropertyChanged;
-
             private void OnPropertyChanged(string property)
             {
-
                 if (PropertyChanged != null)
                 {
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
                 }
             }
         }
-    
 }

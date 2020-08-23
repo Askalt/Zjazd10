@@ -20,29 +20,28 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Main_view_model model { get; set; }
+        public Main_view_model MW_model { get; set; }
         private FakeDB database { get; set; }
-
-        [Obsolete]
         public MainWindow()
         {
             InitializeComponent();
-            model = new Main_view_model();
+#pragma warning disable CS0612 // Typ lub składowa jest przestarzała
+            MW_model = new Main_view_model();
+#pragma warning restore CS0612 // Typ lub składowa jest przestarzała
             database = new FakeDB();
         }
         private void UserControl_1_RegisterAttempt(object sender, Register_eventargs e)
         {
-            model.mod.login = e.login;
-            model.mod.password = e.password;
-            model.mod.r_password = e.password;
-            model.mod.accept = e.accept;
+            MW_model.mod.login = e.login;
+            MW_model.mod.password = e.password;
+            MW_model.mod.r_password = e.password;
+            MW_model.mod.accept = e.accept;
 
-            var result = model.mod_va.Validate(model.mod);
+            var result = MW_model.mod_va.Validate(MW_model.mod);
             Errors.Text = string.Join("|", result.Errors);
 
             if (result.IsValid)
-                database.RegisterUser(model.mod);
-
+                database.RegisterUser(MW_model.mod);
         }
     }
 }

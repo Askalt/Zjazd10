@@ -8,7 +8,6 @@ namespace WpfApp1
 {
         public class Main_view_model
         {
-
             public FakeDB database { get; set; }
 
         [Obsolete]
@@ -19,8 +18,6 @@ namespace WpfApp1
             }
             public Registration_model mod { get; set; }
             public Registration_model_validation mod_va;
-
-
         }
   
 }

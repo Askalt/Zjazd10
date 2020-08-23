@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Background="White" >
+    <Grid Background="WhiteSmoke">
     <StackPanel HorizontalAlignment="Center">
         <Label HorizontalContentAlignment="Center">Rejestracja</Label>
         <Label Content="Login:"/>
