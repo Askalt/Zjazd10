@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
-        d:DesignHeight="300" d:DesignWidth="300">
+        mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="WhiteSmoke">
     <StackPanel HorizontalAlignment="Center">
         <Label HorizontalContentAlignment="Center">Rejestracja</Label>

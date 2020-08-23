@@ -30,9 +30,9 @@ namespace WpfApp1
         private void RegisterAction(object sender, RoutedEventArgs e)
         {
             RegisterAttempt?.Invoke(this, new Register_eventargs(control_m.model.login, control_m.model.password, control_m.model.r_password, control_m.model.accept));
-            tb_Name.Clear();
-            tb_Passw.Clear();
-            tb_RPassw.Clear();
+            us1_Name.Clear();
+            us1_Passw.Clear();
+            us1_RPassw.Clear();
         }
     }
 }
