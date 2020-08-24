@@ -11,9 +11,8 @@ namespace WpfApp1
     {
         public Registration_model_validation()
         {
-#pragma warning disable CS0618 // Typ lub składowa jest przestarzała
+
             CascadeMode = CascadeMode.StopOnFirstFailure;
-#pragma warning restore CS0618 // Typ lub składowa jest przestarzała
 
             RuleFor(x => x.login)
             .NotNull()
