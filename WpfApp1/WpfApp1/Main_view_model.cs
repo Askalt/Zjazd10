@@ -10,7 +10,7 @@ namespace WpfApp1
         {
             public FakeDB database { get; set; }
 
-        [Obsolete]
+     
         public Main_view_model()
             {
                 mod = new Registration_model();
