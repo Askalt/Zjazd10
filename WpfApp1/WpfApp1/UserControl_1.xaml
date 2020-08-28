@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d" 
-        d:DesignHeight="450" d:DesignWidth="800">
+        d:DesignHeight="500" d:DesignWidth="800">
     <Grid Background="WhiteSmoke">
     <StackPanel HorizontalAlignment="Center">
         <Label HorizontalContentAlignment="Center">Rejestracja</Label>
@@ -16,7 +16,16 @@
         <Label Content="Potwierdź hasło:"/>
         <TextBox Height="25" Width="200" x:Name="us1_RPassw" Text="{Binding model.r_password}"/>
         <CheckBox Height="25" Width="200" x:Name="us1_Terms" Content="Akceptuję reguły poprawności" IsChecked="{Binding model.accept}"/>
-        <Button Content="Potwierdź" Height="25" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
-    </StackPanel>
+           
+        <CheckBox Height="25" Width="200" x:Name="other_info" Content="Dodatkowe Info" IsChecked="{Binding model.oi_info}" Click="other_info_Click"/>
+            <Label Content="Imie pupila:"/>
+            <TextBox Height="25" Width="200" x:Name="oi_info1" Text="{Binding model.oi_info1}" IsEnabled="False"/>
+            <Label Content="Ulubiony kolor:"/>
+            <TextBox Height="25" Width="200" x:Name="oi_info2" Text="{Binding model.oi_info2}" IsEnabled="False"/>
+            <Button Margin="15" Content="Potwierdź" Height="50" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
+       
+            
+        </StackPanel>
+        
     </Grid>
 </UserControl>

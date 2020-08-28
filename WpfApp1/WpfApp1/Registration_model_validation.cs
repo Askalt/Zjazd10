@@ -29,6 +29,19 @@ namespace WpfApp1
             RuleFor(x => x.accept)
                .Must(x => x == true)
                .WithMessage("You must accept terms!");
+            RuleFor(x => x.oi_info)
+               .Must(x => x == true)
+               .WithMessage("Tell something more");
+
+
+            RuleFor(x=>x.oi_info1)
+            .NotNull()
+            .NotEmpty()
+            .MinimumLength(2);
+            RuleFor(x => x.oi_info2)
+            .NotNull()
+            .NotEmpty()
+            .MinimumLength(3);
         }
     }
 }

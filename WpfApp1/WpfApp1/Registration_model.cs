@@ -11,19 +11,28 @@ namespace WpfApp1
     public class Registration_model : INotifyPropertyChanged
         {
             public bool accept { get; set; }
+            public bool oi_info { get; set; }
             private string _login;
             private string _password;
             private string _rpassword;
+            private string _oiinfo1;
+            private string _oiinfo2;
+
+
         public Registration_model()
         {
         }
-        public Registration_model(string login, string password, string r_password, bool accept)
+        public Registration_model(string login, string password, string r_password, bool accept,bool oi_info,string oi_info1, string oi_info2)
             {
                 this.login = login;
                 this.password = password;
                 this.r_password = r_password;
                 this.accept = accept;
-            }
+                this.oi_info = oi_info;
+                this.oi_info1 = oi_info1;
+                this.oi_info2 = oi_info2;
+
+        }
             public string login
             {
                 get => _login;
@@ -60,7 +69,31 @@ namespace WpfApp1
                     }
                 }
             }
-            public event PropertyChangedEventHandler PropertyChanged;
+        public string oi_info1
+        {
+            get => _oiinfo1;
+            set
+            {
+                if (_oiinfo1 != value)
+                {
+                    _oiinfo1 = value;
+                    OnPropertyChanged("oi_info1");
+                }
+            }
+        }
+        public string oi_info2
+        {
+            get => _oiinfo2;
+            set
+            {
+                if (_oiinfo2 != value)
+                {
+                    _oiinfo2 = value;
+                    OnPropertyChanged("oi_info2");
+                }
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
             private void OnPropertyChanged(string property)
             {
                 if (PropertyChanged != null)
