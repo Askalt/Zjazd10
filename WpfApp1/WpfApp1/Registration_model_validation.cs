@@ -34,14 +34,16 @@ namespace WpfApp1
                .WithMessage("Tell something more");
 
 
-            RuleFor(x=>x.oi_info1)
+            RuleFor(x => x.oi_info1)
             .NotNull()
-            .NotEmpty()
-            .MinimumLength(2);
+            .NotEmpty();
+
             RuleFor(x => x.oi_info2)
             .NotNull()
             .NotEmpty()
-            .MinimumLength(3);
+            .MaximumLength(4);
+
+     
         }
     }
 }

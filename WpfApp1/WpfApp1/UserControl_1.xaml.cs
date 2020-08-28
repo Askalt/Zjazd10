@@ -26,27 +26,39 @@ namespace WpfApp1
             control_m = new UserControl_model();
             DataContext = control_m;
             InitializeComponent();
-            if (other_info.IsChecked == true)
+
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[4];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
             {
-                oi_info1.IsEnabled = true;
-                oi_info2.IsEnabled = true;
-            }
-            else
-            {
-                oi_info1.IsEnabled = false;
-                oi_info2.IsEnabled = false;
+                stringChars[i] = chars[random.Next(chars.Length)];
             }
 
+            var finalString = new String(stringChars);
+            oi_info1.Text = finalString;
+
         }
+     
         private void RegisterAction(object sender, RoutedEventArgs e)
         {
             RegisterAttempt?.Invoke(this, new Register_eventargs(control_m.model.login, control_m.model.password, control_m.model.r_password, control_m.model.accept, control_m.model.oi_info, control_m.model.oi_info1, control_m.model.oi_info2));
             us1_Name.Clear();
             us1_Passw.Clear();
-            us1_RPassw.Clear();
-            oi_info1.Clear();
+            us1_RPassw.Clear(); 
             oi_info2.Clear();
-            
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[4];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            var finalString = new String(stringChars);
+            oi_info1.Text = finalString;
         }
 
 
@@ -54,14 +66,17 @@ namespace WpfApp1
         {
             if (other_info.IsChecked == true)
             {
-                oi_info1.IsEnabled = true;
+                
                 oi_info2.IsEnabled = true;
             }
             else
             {
-                oi_info1.IsEnabled = false;
+                
                 oi_info2.IsEnabled = false;
             }
+
+        
+
 
         }
     }

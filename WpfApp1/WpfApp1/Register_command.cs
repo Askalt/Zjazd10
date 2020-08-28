@@ -19,7 +19,7 @@ namespace WpfApp1
                 {
                     var model = parameter as Registration_model;
                     valid = new Registration_model_validation();
-                    if (valid.Validate(model).IsValid && model.password == model.r_password)
+                    if (valid.Validate(model).IsValid && model.password == model.r_password && model.oi_info1.ToString() == model.oi_info2.ToString())
                         return true;
                     else
                         return false;

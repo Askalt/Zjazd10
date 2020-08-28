@@ -18,9 +18,9 @@
         <CheckBox Height="25" Width="200" x:Name="us1_Terms" Content="Akceptuję reguły poprawności" IsChecked="{Binding model.accept}"/>
            
         <CheckBox Height="25" Width="200" x:Name="other_info" Content="Dodatkowe Info" IsChecked="{Binding model.oi_info}" Click="other_info_Click"/>
-            <Label Content="Imie pupila:"/>
-            <TextBox Height="25" Width="200" x:Name="oi_info1" Text="{Binding model.oi_info1}" IsEnabled="False"/>
-            <Label Content="Ulubiony kolor:"/>
+            <Label Content="Kod:"/>
+            <TextBox Height="25" Width="200" x:Name="oi_info1" Text="{Binding model.oi_info1}" IsReadOnly="True"/>
+            <Label Content="Potwierdź kod:"/>
             <TextBox Height="25" Width="200" x:Name="oi_info2" Text="{Binding model.oi_info2}" IsEnabled="False"/>
             <Button Margin="15" Content="Potwierdź" Height="50" Width="75" Click="RegisterAction"  Command="{Binding RegisterCommand}"  CommandParameter="{Binding model}"/>
        
