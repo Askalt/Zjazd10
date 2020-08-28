@@ -26,7 +26,17 @@ namespace WpfApp1
             control_m = new UserControl_model();
             DataContext = control_m;
             InitializeComponent();
-         
+            if (other_info.IsChecked == true)
+            {
+                oi_info1.IsEnabled = true;
+                oi_info2.IsEnabled = true;
+            }
+            else
+            {
+                oi_info1.IsEnabled = false;
+                oi_info2.IsEnabled = false;
+            }
+
         }
         private void RegisterAction(object sender, RoutedEventArgs e)
         {
@@ -36,6 +46,7 @@ namespace WpfApp1
             us1_RPassw.Clear();
             oi_info1.Clear();
             oi_info2.Clear();
+            
         }
 
 

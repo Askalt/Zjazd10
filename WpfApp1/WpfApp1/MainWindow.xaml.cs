@@ -25,9 +25,9 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-#pragma warning disable CS0612 // Typ lub składowa jest przestarzała
+
             MW_model = new Main_view_model();
-#pragma warning restore CS0612 // Typ lub składowa jest przestarzała
+
             database = new FakeDB();
         }
         private void UserControl_1_RegisterAttempt(object sender, Register_eventargs e)
@@ -36,6 +36,9 @@ namespace WpfApp1
             MW_model.mod.password = e.password;
             MW_model.mod.r_password = e.password;
             MW_model.mod.accept = e.accept;
+            MW_model.mod.oi_info = e.oi_info;
+            MW_model.mod.oi_info1 = e.oi_info1;
+            MW_model.mod.oi_info2 = e.oi_info2;
 
             var result = MW_model.mod_va.Validate(MW_model.mod);
             Errors.Text = string.Join("|", result.Errors);
